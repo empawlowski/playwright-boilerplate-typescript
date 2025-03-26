@@ -1,0 +1,14 @@
+# Lock files
+package-lock.json
+
+# Test results
+allure-report
+allure-results
+playwright-report
+playwright-results
+test-results
+test-report
+e2e/output/allure-results
+e2e/output/allure-reports
+e2e/output/test-results
+e2e/output/test-reports
