@@ -1,4 +1,5 @@
-import { test, expect, type Page } from '@playwright/test';
+/* eslint-disable @typescript-eslint/no-explicit-any */
+import { expect, test, type Page } from '@playwright/test';
 
 test.beforeEach(async ({ page }) => {
   await page.goto('https://demo.playwright.dev/todomvc');
