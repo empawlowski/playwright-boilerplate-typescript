@@ -3,12 +3,9 @@ package-lock.json
 
 # Test results
 allure-report
-allure-results
+allure-result
 playwright-report
-playwright-results
-test-results
+playwright-result
+test-result
 test-report
-e2e/output/allure-results
-e2e/output/allure-reports
-e2e/output/test-results
-e2e/output/test-reports
+e2e/output/**
