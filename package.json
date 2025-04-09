@@ -18,9 +18,9 @@
     "test:changed": "npm run test -- --only-changed",
     "test:tags": "npx playwright test --grep \"@smoke|@reg\"",
     "test:reg": "npx playwright test --grep \"@reg\"",
-    "show-report": "npx playwright show-report e2e/output/test-reports",
-    "generate-report": "npx allure generate e2e/output/allure-results -o src/output/allure-reports --clean",
-    "allure-report": "npx allure open ./e2e/output/allure-reports"
+    "show-report": "npx playwright show-report e2e/output/test-report",
+    "generate-report": "npx allure generate e2e/output/allure-result -o src/output/allure-report --clean",
+    "allure-report": "npx allure open ./e2e/output/allure-report"
   },
   "keywords": [],
   "author": "Marcin Pawłowski",
