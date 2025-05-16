@@ -12,9 +12,9 @@
   ```
   npx playwright install
   ```
-- setup husky:
-  ```
-  npx husky
+- setup husky [(docs)](https://typicode.github.io/husky/get-started.html#husky-init-recommended):
+  ```bash
+  npx husky init
   ```
 - (optional) install Visual Studio Code extensions
 
