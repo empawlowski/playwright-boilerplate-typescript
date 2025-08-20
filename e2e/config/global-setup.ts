@@ -14,7 +14,7 @@ async function globalSetup(): Promise<void> {
   const environment = process.env['ENV'] ?? environments.test;
   dotenv.config({ path: path.resolve(__dirname, `../../.env.${environment}`) });
   console.log('🌍 Environment: ', environment);
-  console.log('🛜 URL: ', Configuration.baseURL);
+  console.log('🛜  URL: ', Configuration.baseURL);
   // console.log('🕵️‍♂️  User: ', Configuration.user);
   // console.log('🔐  Password: ', Configuration.password);
 }
