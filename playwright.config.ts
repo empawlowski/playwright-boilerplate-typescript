@@ -14,8 +14,8 @@ export default defineConfig({
   // workers: process.env.CI ? 1 : undefined,
   reporter: [
     ['html', { open: 'never', outputFolder: 'e2e/output/test-report' }],
-    ['json', { open: 'never', outputFile: 'src/output/test-results/results.json' }],
-    ['junit', { open: 'never', outputFile: 'src/output/test-results/results.xml' }],
+    ['json', { open: 'never', outputFile: 'e2e/output/test-result/results.json' }],
+    ['junit', { open: 'never', outputFile: 'e2e/output/test-result/results.xml' }],
   ],
   use: {
     // baseURL: process.env.CI ? process.env.PLAYWRIGHT_BASE_URL : 'http://localhost:3000',
