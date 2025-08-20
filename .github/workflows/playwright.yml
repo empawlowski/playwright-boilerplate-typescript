@@ -34,7 +34,7 @@ jobs:
           name: test-report
           path: e2e/output/test-report/
           retention-days: 7
-      - name: Publish jUnit Test Report
+      - name: Publish JUnit Test Report
         uses: mikepenz/action-junit-report@v5
         if: success() || failure()
         with:
