@@ -46,6 +46,7 @@ jobs:
         if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
   tests:
+    name: Run all tests
     if: ${{ success() }}
     needs: [build]
     timeout-minutes: 5
