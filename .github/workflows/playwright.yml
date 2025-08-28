@@ -11,7 +11,7 @@ permissions:
   id-token: write
 
 jobs:
-  test:
+  tests:
     timeout-minutes: 5
     runs-on: ubuntu-latest
     steps:
@@ -19,9 +19,19 @@ jobs:
       - uses: actions/setup-node@v4
         with:
           node-version: lts/*
+          cache: 'npm'
+          registry-url: 'https://registry.npmjs.org/'
+      - name: Cache Playwright binaries
+        uses: actions/cache@v4
+        id: playwright-cache
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
       - name: Install dependencies
         run: npm ci
       - name: Install Playwright Browsers
+        if: steps.playwright-cache.outputs.cache-hit != 'true'
         run: npx playwright install --with-deps chromium
       - name: Run Playwright tests with environment variables
         run: npx playwright test
@@ -31,8 +41,8 @@ jobs:
       - uses: actions/upload-artifact@v4
         if: ${{ !cancelled() }}
         with:
-          name: test-report
-          path: e2e/output/test-report/
+          name: test-result
+          path: e2e/output/
           retention-days: 7
       - name: Publish JUnit Test Report
         uses: mikepenz/action-junit-report@v5

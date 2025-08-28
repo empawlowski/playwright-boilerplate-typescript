@@ -13,6 +13,7 @@ export default defineConfig({
   // retries: process.env.CI ? 1 : 0,
   // workers: process.env.CI ? 1 : undefined,
   reporter: [
+    ['github'],
     ['html', { open: 'never', outputFolder: 'e2e/output/test-report' }],
     ['json', { open: 'never', outputFile: 'e2e/output/test-result/results.json' }],
     ['junit', { open: 'never', outputFile: 'e2e/output/test-result/results.xml' }],
