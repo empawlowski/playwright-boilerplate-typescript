@@ -49,3 +49,11 @@ jobs:
         if: success() || failure()
         with:
           report_paths: 'e2e/output/test-result/results.xml'
+      - name: Save cache always
+        id: save-playwright-cache
+        if: always() && steps.playwright-cache.outputs.cache-hit != 'true'
+        uses: actions/cache/save@v4
+        with:
+          path: |
+            ~/.cache/ms-playwright
+          key: ${{ runner.os }}-playwright
